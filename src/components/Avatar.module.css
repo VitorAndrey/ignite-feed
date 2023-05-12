@@ -1,0 +1,27 @@
+/* Global Avatar Picture */
+.avatar {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* With Border */
+.border {
+  outline: 2px solid var(--green-500);
+  border: 4px solid var(--gray-800);
+  width: calc(3rem + 8px);
+  height: calc(3rem + 8px);
+}
+
+/* Without Border */
+.noBorder {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .noBorder {
+    width: 2rem;
+    height: 2rem;
+  }
+}

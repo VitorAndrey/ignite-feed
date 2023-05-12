@@ -1,0 +1,19 @@
+/* Header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  background-color: var(--gray-800);
+
+  padding: 1.25rem 0;
+
+  width: 100%;
+}
+.header img {
+  width: 2rem;
+}
+.header h1 {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,128 @@
+/*  Post  */
+.post {
+  border-radius: 8px;
+
+  background: var(--gray-800);
+
+  padding: 2.5rem;
+}
+
+.post + .post {
+  margin-top: 2rem;
+}
+
+.post > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*  Author  */
+.author {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.author strong {
+  line-height: 1.6rem;
+
+  color: var(--gray-100);
+}
+.author span,
+.post > header time {
+  font-size: 0.875rem;
+  line-height: 1.6rem;
+
+  color: var(--gray-400);
+}
+
+/*  Profile Info */
+.profileInfo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*  Content  */
+.content {
+  line-height: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--gray-600);
+
+  padding: 2rem 0;
+}
+.content a {
+  text-decoration: none;
+  color: var(--green-300);
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+.content a:hover {
+  color: var(--green-500);
+}
+
+/*  Form  */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem 0;
+}
+.form > strong {
+  line-height: 1.6rem;
+}
+.form textarea {
+  resize: none;
+  line-height: 1.4;
+  padding: 0.875rem;
+  color: var(--gray-100);
+  border: none;
+  background: var(--gray-900);
+  border-radius: 8px;
+  height: 6rem;
+}
+
+.form textarea:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--green-500);
+}
+
+/*  Form Button */
+.form footer {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.form:focus-within footer {
+  visibility: visible;
+  max-height: none;
+  margin-bottom: 1rem;
+}
+.form button {
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 6rem;
+  height: 2.6rem;
+  border: none;
+  outline: none;
+  color: var(--white);
+  background: var(--green-500);
+}
+.form button:hover {
+  background: var(--green-300);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .post {
+    padding: 1rem;
+  }
+  .post > header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}

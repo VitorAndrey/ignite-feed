@@ -1,0 +1,103 @@
+/* Comment */
+.comment {
+  display: flex;
+  grid-template-columns: 3rem 1fr;
+  gap: 1rem;
+}
+
+.commentBox {
+  flex: 1;
+}
+
+/* Globals Button */
+.commentCard header button,
+.commentBox footer button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  line-height: 0;
+}
+
+/* Profile Image */
+.profilePicture {
+  border-radius: 8px;
+  object-fit: cover;
+
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Comment Card */
+.commentCard {
+  font-size: 0.875rem;
+  line-height: 1.6rem;
+  border-radius: 8px;
+
+  background: var(--gray-700);
+
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+}
+
+.commentCard strong {
+  font-weight: bold;
+
+  color: var(--gray-100);
+}
+
+.commentCard strong span {
+  color: var(--gray-400);
+}
+
+.commentCard time {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+.commentCard p {
+  margin-top: 1rem;
+
+  color: var(--gray-300);
+}
+
+/* Header Button */
+.commentCard header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.commentCard header button:hover {
+  color: var(--red-400);
+}
+
+/* Comment Box Footer */
+.commentBox footer {
+  font-size: 0.875rem;
+
+  margin: 1rem 0 1.5rem 0;
+}
+
+/* Footer Button */
+.commentBox footer button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  font-size: 0.875rem;
+
+  color: var(--gray-400);
+}
+.commentBox footer button span::before {
+  content: "\2022";
+  padding: 0 0.25rem;
+}
+
+.commentBox footer button:hover {
+  color: var(--white);
+}
+
+.commentBox footer button:active {
+  color: var(--green-500);
+}
