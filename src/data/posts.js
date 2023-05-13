@@ -17,6 +17,15 @@ const posts = [
       { type: "link", content: "👉vitor.com/site" },
     ],
     publishedAt: new Date("2023-05-12 13:21:00"),
+    comments: [
+      {
+        id: "1",
+        name: "Vitor Andrey",
+        avatarUrl: "https://github.com/VitorAndrey.png",
+        content: "Adorei o post! 👏",
+        publishedAt: new Date("2023-05-12 10:30:00"),
+      },
+    ],
   },
   {
     id: "2",
@@ -36,6 +45,15 @@ const posts = [
       { type: "link", content: "👉jane.design/idososnanet" },
     ],
     publishedAt: new Date("2023-05-12 13:25:00"),
+    comments: [
+      {
+        id: "1",
+        name: "Carla Martins",
+        avatarUrl: "https://github.com/CarlaMartins.png",
+        content: "Parabéns pela iniciativa de ensinar idosos a usar a tecnologia! 👏",
+        publishedAt: new Date("2023-05-12 10:30:00"),
+      },
+    ],
   },
   {
     id: "3",
@@ -55,6 +73,15 @@ const posts = [
       { type: "link", content: "👉bobdev.com/tarefas" },
     ],
     publishedAt: new Date("2023-05-12 14:30:00"),
+    comments: [
+      {
+        id: "1",
+        name: "Gustavo Souza",
+        avatarUrl: "https://github.com/GustavoSouza.png",
+        content: "Seu novo aplicativo de streaming de música ficou incrível! Parabéns! 🎵",
+        publishedAt: new Date("2023-05-12 12:45:00"),
+      },
+    ],
   },
   {
     id: "4",
@@ -74,6 +101,15 @@ const posts = [
       { type: "link", content: "👉blogdaempresa.com.br/lancamento" },
     ],
     publishedAt: new Date("2023-05-12 15:45:00"),
+    comments: [
+      {
+        id: "1",
+        name: "Juliana Silva",
+        avatarUrl: "https://github.com/JulianaSilva.png",
+        content: "Gostei muito do seu artigo sobre como alavancar as vendas pelo Instagram! 👍",
+        publishedAt: new Date("2023-05-12 14:20:00"),
+      },
+    ],
   },
   {
     id: "5",
@@ -93,6 +129,16 @@ const posts = [
       { type: "link", content: "👉meusite.com.br" },
     ],
     publishedAt: new Date("2023-05-12 16:15:00"),
+    comments: [
+      {
+        id: "1",
+        name: "Lucas Oliveira",
+        avatarUrl: "https://github.com/LucasOliveira.png",
+        content:
+          "Seu sistema de gestão de estoque ficou ainda melhor com essa nova funcionalidade! Parabéns pelo trabalho! 👏",
+        publishedAt: new Date("2023-05-12 17:30:00"),
+      },
+    ],
   },
   {
     id: "6",
@@ -112,6 +158,16 @@ const posts = [
       { type: "link", content: "👉meusite.com.br/pedidos" },
     ],
     publishedAt: new Date("2023-05-12 17:30:00"),
+    comments: [
+      {
+        id: "1",
+        name: "Maria Souza",
+        avatarUrl: "https://github.com/MariaSouza.png",
+        content:
+          "Muito interessante o seu artigo sobre marketing digital! Obrigada por compartilhar seus conhecimentos! 🙏",
+        publishedAt: new Date("2023-05-12 21:00:00"),
+      },
+    ],
   },
   {
     id: "7",
@@ -131,6 +187,7 @@ const posts = [
       { type: "link", content: "👉blogdaempresa.com.br/marketing" },
     ],
     publishedAt: new Date("2023-05-12 18:45:00"),
+    comments: [],
   },
   {
     id: "8",
@@ -150,6 +207,7 @@ const posts = [
       { type: "link", content: "👉meuapp.com.br" },
     ],
     publishedAt: new Date("2023-05-12 19:30:00"),
+    comments: [],
   },
   {
     id: "9",
@@ -169,6 +227,7 @@ const posts = [
       { type: "link", content: "👉meusistema.com.br/estoque" },
     ],
     publishedAt: new Date("2023-05-12 20:15:00"),
+    comments: [],
   },
   {
     id: "10",
@@ -188,6 +247,7 @@ const posts = [
       { type: "link", content: "👉blogdaempresa.com.br/instagram" },
     ],
     publishedAt: new Date("2023-05-12 21:30:00"),
+    comments: [],
   },
 ];
 

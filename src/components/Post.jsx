@@ -1,16 +1,13 @@
 import styles from "./Post.module.css";
-
+import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { formatDistanceToNow } from "date-fns";
-
+import { ptBR } from "date-fns/locale";
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
-import { ptBR } from "date-fns/locale";
 
-import { comments } from "../data/comments";
-// import { useState } from "react";
-
-export function Post({ author, content, publishedAt }) {
-  // const [handleComments, setHandleComments] = useState();
+export function Post({ author, content, publishedAt, comments }) {
+  const [commentList, setCommentList] = useState(comments);
 
   const formattedDate = new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
@@ -19,15 +16,23 @@ export function Post({ author, content, publishedAt }) {
     minute: "2-digit",
   }).format(publishedAt);
 
-  const toNowDate = formatDistanceToNow(publishedAt, { locale: ptBR, addSuffix: true });
+  const toNowDate = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
 
-  // function handleCreateNewComment() {
-  //   event.preventDefault();
-
-  //   setHandleComments([...comments, comments.length + 1]);
-
-  //   console.log(handleComments);
-  // }
+  function handleCreateNewComment(event) {
+    event.preventDefault();
+    const newComment = {
+      id: uuidv4(),
+      name: "Carla Martins",
+      avatarUrl: "https://github.com/CarlaMartins.png",
+      content: event.target.commentText.value,
+      publishedAt: new Date(),
+    };
+    setCommentList([...commentList, newComment]);
+    event.target.commentText.value = "";
+  }
 
   return (
     <article className={styles.post}>
@@ -52,10 +57,10 @@ export function Post({ author, content, publishedAt }) {
       <div className={styles.content}>
         {content.map((line) => {
           if (line.type === "paragraph") {
-            return <p key={line.id}>{line.content}</p>;
+            return <p key={uuidv4()}>{line.content}</p>;
           } else if (line.type === "link") {
             return (
-              <p>
+              <p key={uuidv4()}>
                 <a href="#">{line.content}</a>
               </p>
             );
@@ -64,9 +69,9 @@ export function Post({ author, content, publishedAt }) {
       </div>
 
       {/* FORM */}
-      <form onSubmit={() => {}} className={styles.form}>
+      <form onSubmit={handleCreateNewComment} className={styles.form}>
         <strong>Deixe seu feedback</strong>
-        <textarea type="text" placeholder="Escreva um comentário..." />
+        <textarea type="text" name="commentText" placeholder="Escreva um comentário..." />
         <footer>
           <button type="submit">Publicar</button>
         </footer>
@@ -74,7 +79,7 @@ export function Post({ author, content, publishedAt }) {
 
       {/* COMMENTS */}
       <div className={styles.commentList}>
-        {comments.map((comment) => {
+        {commentList.map((comment) => {
           return (
             <Comment
               key={comment.id}
