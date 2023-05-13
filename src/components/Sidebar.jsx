@@ -49,11 +49,11 @@ export function Sidebar() {
         {editingProfile ? (
           <form autoComplete="off" className={styles.editProfile} onSubmit={changeUser}>
             <div className={styles.inputContainer}>
-              <label htmlFor="inputName">Change Name:</label>
+              <label htmlFor="inputName">Mudar Nome:</label>
               <input type="text" placeholder={name} name="inputName" />
             </div>
             <div className={styles.inputContainer}>
-              <label htmlFor="inputRole">Change Role:</label>
+              <label htmlFor="inputRole">Mudar Cargo:</label>
               <input type="text" placeholder={role} name="inputRole" />
             </div>
             <div className={styles.inputContainer}>
@@ -63,7 +63,7 @@ export function Sidebar() {
                   className={styles.question}
                   onClick={() => setIsQuestioning((prev) => !prev)}
                 />
-                Change Picture:
+                Mudar Foto:
               </label>
               {isQuestioning && (
                 <p className={styles.help}>
