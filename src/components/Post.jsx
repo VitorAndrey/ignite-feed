@@ -1,13 +1,17 @@
 import styles from "./Post.module.css";
+
 import { useState } from "react";
+
 import { v4 as uuidv4 } from "uuid";
 import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
+
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
 
 export function Post({ author, content, publishedAt, comments }) {
   const [commentList, setCommentList] = useState(comments);
+  const [newCommentText, setNewcommentText] = useState("");
 
   const formattedDate = new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
@@ -27,11 +31,15 @@ export function Post({ author, content, publishedAt, comments }) {
       id: uuidv4(),
       name: "Carla Martins",
       avatarUrl: "https://github.com/CarlaMartins.png",
-      content: event.target.commentText.value,
+      content: newCommentText,
       publishedAt: new Date(),
     };
     setCommentList([...commentList, newComment]);
-    event.target.commentText.value = "";
+    setNewcommentText("");
+  }
+
+  function handleCommentText(event) {
+    setNewcommentText(event.target.value);
   }
 
   return (
@@ -71,7 +79,13 @@ export function Post({ author, content, publishedAt, comments }) {
       {/* FORM */}
       <form onSubmit={handleCreateNewComment} className={styles.form}>
         <strong>Deixe seu feedback</strong>
-        <textarea type="text" name="commentText" placeholder="Escreva um comentário..." />
+        <textarea
+          type="text"
+          name="commentText"
+          placeholder="Escreva um comentário..."
+          onChange={handleCommentText}
+          value={newCommentText}
+        />
         <footer>
           <button type="submit">Publicar</button>
         </footer>

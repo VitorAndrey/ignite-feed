@@ -1,9 +1,11 @@
-import { formatDistanceToNow } from "date-fns";
-import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 
-import { ThumbsUp, Trash } from "phosphor-react";
+import { formatDistanceToNow } from "date-fns";
 import { ptBR } from "date-fns/locale";
+
+import { ThumbsUp, Trash } from "phosphor-react";
+
+import { Avatar } from "./Avatar";
 
 export function Comment({ name, src, publishedAt, content }) {
   const formattedDate = new Intl.DateTimeFormat("pt-BR", {

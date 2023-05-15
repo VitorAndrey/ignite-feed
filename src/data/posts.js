@@ -20,9 +20,9 @@ const posts = [
     comments: [
       {
         id: "1",
-        name: "Vitor Andrey",
-        avatarUrl: "https://github.com/VitorAndrey.png",
-        content: "Adorei o post! 👏",
+        name: "Alice Doe",
+        avatarUrl: "https://github.com/Alice.png",
+        content: "Parabéns pela iniciativa de criar projetos para o portifolio! 👏",
         publishedAt: new Date("2023-05-12 10:30:00"),
       },
     ],
@@ -48,9 +48,9 @@ const posts = [
     comments: [
       {
         id: "1",
-        name: "Carla Martins",
-        avatarUrl: "https://github.com/CarlaMartins.png",
-        content: "Parabéns pela iniciativa de ensinar idosos a usar a tecnologia! 👏",
+        name: "Vitor Andrey",
+        avatarUrl: "https://github.com/VitorAndrey.png",
+        content: "Adorei o post! 👏",
         publishedAt: new Date("2023-05-12 10:30:00"),
       },
     ],
