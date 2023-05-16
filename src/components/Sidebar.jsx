@@ -19,11 +19,11 @@ export function Sidebar({
   function changeUser(event) {
     event.preventDefault();
 
-    if (event.target.inputName.value != "") {
+    if (event.target.inputName.value !== "") {
       onChangeName(event.target.inputName.value);
-    } else if (event.target.inputRole.value != "") {
+    } else if (event.target.inputRole.value !== "") {
       onChangeRole(event.target.inputRole.value);
-    } else if (event.target.inputPicture.value != "") {
+    } else if (event.target.inputPicture.value !== "") {
       onChangePicture(event.target.inputPicture.value);
     }
 
@@ -77,7 +77,7 @@ export function Sidebar({
               <input type="text" placeholder={userPicture} name="inputPicture" />
             </div>
             <div className={styles.buttonContainer}>
-              <button type="submut" className={styles.greenButton}>
+              <button type="submit" className={styles.greenButton}>
                 <FloppyDisk size={20} />
                 Salvar alterações
               </button>
