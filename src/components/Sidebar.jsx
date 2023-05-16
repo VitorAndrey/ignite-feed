@@ -5,22 +5,26 @@ import { useState } from "react";
 
 import { PencilSimpleLine, FloppyDisk, XCircle, Question } from "phosphor-react";
 
-export function Sidebar() {
+export function Sidebar({
+  onChangeName,
+  onChangeRole,
+  onChangePicture,
+  userName,
+  userRole,
+  userPicture,
+}) {
   const [editingProfile, setEditingProfile] = useState(false);
   const [isQuestioning, setIsQuestioning] = useState(false);
-  const [name, setName] = useState("Vitor Andrey");
-  const [role, setRole] = useState("Developer");
-  const [picture, setPicture] = useState("VitorAndrey");
 
   function changeUser(event) {
     event.preventDefault();
 
     if (event.target.inputName.value != "") {
-      setName(event.target.inputName.value);
+      onChangeName(event.target.inputName.value);
     } else if (event.target.inputRole.value != "") {
-      setRole(event.target.inputRole.value);
+      onChangeRole(event.target.inputRole.value);
     } else if (event.target.inputPicture.value != "") {
-      setPicture(event.target.inputPicture.value);
+      onChangePicture(event.target.inputPicture.value);
     }
 
     setEditingProfile(false);
@@ -40,9 +44,9 @@ export function Sidebar() {
       />
 
       <div className={styles.profileCard}>
-        <Avatar src={`https://github.com/${picture}.png`} />
-        <strong>{name}</strong>
-        <span>{role}</span>
+        <Avatar src={`https://github.com/${userPicture}.png`} />
+        <strong>{userName}</strong>
+        <span>{userRole}</span>
       </div>
 
       <footer className={styles.footer}>
@@ -50,11 +54,11 @@ export function Sidebar() {
           <form autoComplete="off" className={styles.editProfile} onSubmit={changeUser}>
             <div className={styles.inputContainer}>
               <label htmlFor="inputName">Mudar Nome:</label>
-              <input type="text" placeholder={name} name="inputName" />
+              <input type="text" placeholder={userName} name="inputName" />
             </div>
             <div className={styles.inputContainer}>
               <label htmlFor="inputRole">Mudar Cargo:</label>
-              <input type="text" placeholder={role} name="inputRole" />
+              <input type="text" placeholder={userRole} name="inputRole" />
             </div>
             <div className={styles.inputContainer}>
               <label htmlFor="inputPicture">
@@ -70,7 +74,7 @@ export function Sidebar() {
                   A foto de perfil é definida com base em seu nick do GitHub.
                 </p>
               )}
-              <input type="text" placeholder={picture} name="inputPicture" />
+              <input type="text" placeholder={userPicture} name="inputPicture" />
             </div>
             <div className={styles.buttonContainer}>
               <button type="submut" className={styles.greenButton}>

@@ -9,7 +9,7 @@ import { ptBR } from "date-fns/locale";
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
 
-export function Post({ author, content, publishedAt, comments }) {
+export function Post({ author, content, publishedAt, comments, userName, userPicture }) {
   const [commentList, setCommentList] = useState(comments);
   const [newCommentText, setNewcommentText] = useState("");
 
@@ -29,8 +29,8 @@ export function Post({ author, content, publishedAt, comments }) {
     event.preventDefault();
     const newComment = {
       id: uuidv4(),
-      name: "Carla Martins",
-      avatarUrl: "https://github.com/CarlaMartins.png",
+      name: userName,
+      avatarUrl: `https://github.com/${userPicture}.png`,
       content: newCommentText,
       publishedAt: new Date(),
     };
@@ -40,6 +40,11 @@ export function Post({ author, content, publishedAt, comments }) {
 
   function handleCommentText(event) {
     setNewcommentText(event.target.value);
+  }
+
+  function deleteComment(commentId) {
+    const listWithoutDeleted = commentList.filter((comment) => comment.id !== commentId);
+    setCommentList(listWithoutDeleted);
   }
 
   return (
@@ -85,6 +90,7 @@ export function Post({ author, content, publishedAt, comments }) {
           placeholder="Escreva um comentário..."
           onChange={handleCommentText}
           value={newCommentText}
+          required
         />
         <footer>
           <button type="submit">Publicar</button>
@@ -97,10 +103,12 @@ export function Post({ author, content, publishedAt, comments }) {
           return (
             <Comment
               key={comment.id}
+              id={comment.id}
               name={comment.name}
               src={comment.avatarUrl}
               publishedAt={comment.publishedAt}
               content={comment.content}
+              onDeleteComment={deleteComment}
             />
           );
         })}

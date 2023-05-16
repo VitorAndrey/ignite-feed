@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 const posts = [
   {
     id: "1",
@@ -19,7 +21,7 @@ const posts = [
     publishedAt: new Date("2023-05-12 13:21:00"),
     comments: [
       {
-        id: "1",
+        id: uuidv4(),
         name: "Alice Doe",
         avatarUrl: "https://github.com/Alice.png",
         content: "Parabéns pela iniciativa de criar projetos para o portifolio! 👏",
@@ -47,7 +49,7 @@ const posts = [
     publishedAt: new Date("2023-05-12 13:25:00"),
     comments: [
       {
-        id: "1",
+        id: uuidv4(),
         name: "Vitor Andrey",
         avatarUrl: "https://github.com/VitorAndrey.png",
         content: "Adorei o post! 👏",
@@ -75,7 +77,7 @@ const posts = [
     publishedAt: new Date("2023-05-12 14:30:00"),
     comments: [
       {
-        id: "1",
+        id: uuidv4(),
         name: "Gustavo Souza",
         avatarUrl: "https://github.com/GustavoSouza.png",
         content: "Seu novo aplicativo de streaming de música ficou incrível! Parabéns! 🎵",
@@ -103,7 +105,7 @@ const posts = [
     publishedAt: new Date("2023-05-12 15:45:00"),
     comments: [
       {
-        id: "1",
+        id: uuidv4(),
         name: "Juliana Silva",
         avatarUrl: "https://github.com/JulianaSilva.png",
         content: "Gostei muito do seu artigo sobre como alavancar as vendas pelo Instagram! 👍",
@@ -131,7 +133,7 @@ const posts = [
     publishedAt: new Date("2023-05-12 16:15:00"),
     comments: [
       {
-        id: "1",
+        id: uuidv4(),
         name: "Lucas Oliveira",
         avatarUrl: "https://github.com/LucasOliveira.png",
         content:
@@ -160,7 +162,7 @@ const posts = [
     publishedAt: new Date("2023-05-12 17:30:00"),
     comments: [
       {
-        id: "1",
+        id: uuidv4(),
         name: "Maria Souza",
         avatarUrl: "https://github.com/MariaSouza.png",
         content:

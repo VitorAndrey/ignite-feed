@@ -1,13 +1,13 @@
 import styles from "./Comment.module.css";
 
 import { formatDistanceToNow } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { id, ptBR } from "date-fns/locale";
 
 import { ThumbsUp, Trash } from "phosphor-react";
 
 import { Avatar } from "./Avatar";
 
-export function Comment({ name, src, publishedAt, content }) {
+export function Comment({ name, src, publishedAt, content, onDeleteComment, id }) {
   const formattedDate = new Intl.DateTimeFormat("pt-BR", {
     day: "2-digit",
     month: "long",
@@ -16,6 +16,10 @@ export function Comment({ name, src, publishedAt, content }) {
   }).format(publishedAt);
 
   const toNowDate = formatDistanceToNow(publishedAt, { locale: ptBR, addSuffix: true });
+
+  function handleDeleteComment() {
+    onDeleteComment(id);
+  }
 
   return (
     <div className={styles.comment}>
@@ -29,7 +33,7 @@ export function Comment({ name, src, publishedAt, content }) {
               <br />
               <time title={formattedDate}>{toNowDate}</time>
             </div>
-            <button title="Deletar comentário" type="button">
+            <button onClick={handleDeleteComment} title="Deletar comentário" type="button">
               <Trash size={22} />
             </button>
           </header>
