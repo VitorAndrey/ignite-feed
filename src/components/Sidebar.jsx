@@ -21,9 +21,11 @@ export function Sidebar({
 
     if (event.target.inputName.value !== "") {
       onChangeName(event.target.inputName.value);
-    } else if (event.target.inputRole.value !== "") {
+    }
+    if (event.target.inputRole.value !== "") {
       onChangeRole(event.target.inputRole.value);
-    } else if (event.target.inputPicture.value !== "") {
+    }
+    if (event.target.inputPicture.value !== "") {
       onChangePicture(event.target.inputPicture.value);
     }
 
