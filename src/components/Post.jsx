@@ -39,7 +39,12 @@ export function Post({ author, content, publishedAt, comments, userName, userPic
   }
 
   function handleCommentText(event) {
+    event.target.setCustomValidity("");
     setNewcommentText(event.target.value);
+  }
+
+  function customInvalidMessage() {
+    event.target.setCustomValidity("Não é possivel publicar um comentário em branco!");
   }
 
   function deleteComment(commentId) {
@@ -91,6 +96,7 @@ export function Post({ author, content, publishedAt, comments, userName, userPic
           onChange={handleCommentText}
           value={newCommentText}
           required
+          onInvalid={customInvalidMessage}
         />
         <footer>
           <button type="submit">Publicar</button>
