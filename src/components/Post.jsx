@@ -52,6 +52,8 @@ export function Post({ author, content, publishedAt, comments, userName, userPic
     setCommentList(listWithoutDeleted);
   }
 
+  const isNewCommentEmpty = newCommentText.length == 0;
+
   return (
     <article className={styles.post}>
       {/* HEADER */}
@@ -99,7 +101,9 @@ export function Post({ author, content, publishedAt, comments, userName, userPic
           onInvalid={customInvalidMessage}
         />
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
 

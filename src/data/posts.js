@@ -26,6 +26,7 @@ const posts = [
         avatarUrl: "https://github.com/Alice.png",
         content: "Parabéns pela iniciativa de criar projetos para o portifolio! 👏",
         publishedAt: new Date("2023-05-12 10:30:00"),
+        likes: 0,
       },
     ],
   },
@@ -54,6 +55,7 @@ const posts = [
         avatarUrl: "https://github.com/VitorAndrey.png",
         content: "Adorei o post! 👏",
         publishedAt: new Date("2023-05-12 10:30:00"),
+        likes: 0,
       },
     ],
   },
@@ -79,16 +81,17 @@ const posts = [
       {
         id: uuidv4(),
         name: "Gustavo Souza",
-        avatarUrl: "https://github.com/GustavoSouza.png",
+        avatarUrl: "https://github.com/Andrew.png",
         content: "Seu novo aplicativo de streaming de música ficou incrível! Parabéns! 🎵",
         publishedAt: new Date("2023-05-12 12:45:00"),
+        likes: 0,
       },
     ],
   },
   {
     id: "4",
     author: {
-      avatarUrl: "https://github.com/Carol.png",
+      avatarUrl: "https://github.com/Karen.png",
       name: "Carol Silva",
       role: "Product Manager",
     },
@@ -107,9 +110,10 @@ const posts = [
       {
         id: uuidv4(),
         name: "Juliana Silva",
-        avatarUrl: "https://github.com/JulianaSilva.png",
+        avatarUrl: "https://github.com/Ana.png",
         content: "Gostei muito do seu artigo sobre como alavancar as vendas pelo Instagram! 👍",
         publishedAt: new Date("2023-05-12 14:20:00"),
+        likes: 0,
       },
     ],
   },
@@ -139,6 +143,7 @@ const posts = [
         content:
           "Seu sistema de gestão de estoque ficou ainda melhor com essa nova funcionalidade! Parabéns pelo trabalho! 👏",
         publishedAt: new Date("2023-05-12 17:30:00"),
+        likes: 0,
       },
     ],
   },
@@ -164,10 +169,11 @@ const posts = [
       {
         id: uuidv4(),
         name: "Maria Souza",
-        avatarUrl: "https://github.com/MariaSouza.png",
+        avatarUrl: "https://github.com/Maria.png",
         content:
           "Muito interessante o seu artigo sobre marketing digital! Obrigada por compartilhar seus conhecimentos! 🙏",
         publishedAt: new Date("2023-05-12 21:00:00"),
+        likes: 0,
       },
     ],
   },
@@ -234,7 +240,7 @@ const posts = [
   {
     id: "10",
     author: {
-      avatarUrl: "https://github.com/Isabela.png",
+      avatarUrl: "https://github.com/Isabell.png",
       name: "Isabela Souza",
       role: "Content Writer",
     },
